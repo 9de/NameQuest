@@ -1,0 +1,98 @@
+{
+  "name": "namequest",
+  "version": "1.0.0",
+  "description": "Your ultimate companion for tracking Minecraft username histories across LabyMod, Badlion, and Crafty.gg",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.9.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "deploy": "node src/utils/deploy-commands.js",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write \"src/**/*.js\"",
+    "update": "npm update && npm audit fix",
+    "clean": "rimraf node_modules package-lock.json",
+    "reinstall": "npm run clean && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord-bot",
+    "minecraft",
+    "labymod",
+    "badlion",
+    "crafty-gg",
+    "username-history",
+    "discord.js",
+    "minecraft-history",
+    "namequest"
+  ],
+  "author": {
+    "name": "Turki",
+    "url": "https://github.com/TurkiPro"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurkiPro/NameQuest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TurkiPro/NameQuest/issues"
+  },
+  "homepage": "https://github.com/TurkiPro/NameQuest#readme",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "chalk": "^5.3.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*"
+    ],
+    "delay": "2500",
+    "watch": [
+      "src/**/*",
+      ".env"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "useTabs": false,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2022": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "off",
+      "prettier/prettier": "error"
+    }
+  }
+}
